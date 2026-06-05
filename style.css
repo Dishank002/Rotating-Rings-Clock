@@ -1,0 +1,367 @@
+body {
+        font-family: Arial, sans-serif;
+        background-image: linear-gradient(
+          to top,
+          #000000,
+          #1e0e0f,
+          #321613,
+          #451e11,
+          #532b08
+        );
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .left-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50vw;
+        max-width: 50%;
+        height: 100vh;
+        background-color: black;
+        z-index: 10000;
+        pointer-events: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      .vertical-line {
+        position: fixed;
+        top: 0;
+        left: 50vw;
+        max-left: 50%;
+        width: 1px;
+        height: 100vh;
+        background-color: gray;
+        z-index: 10001;
+        pointer-events: none;
+      }
+.designer-text {
+  color: white;
+  text-align: right;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* ensures one line above, one below */
+}
+
+.designer-text h1 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.designer-text span {
+  margin: 0;
+  font-size: 50px;
+  line-height: 1.2;
+}
+
+
+    #clock-container {
+  position: relative;
+  width: 90vw;
+  max-width: 640px;
+  height: 90vw;
+  max-height: 640px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 50%;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+/* Rings scale with container */
+.ring-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform-origin: center center;
+}
+
+#outer-wrapper {
+  width: 94%;
+  height: 94%;
+}
+
+#middle-wrapper {
+  width: 75%;
+  height: 75%;
+}
+
+#inner-wrapper {
+  width: 60%;
+  height: 60%;
+}
+
+      .ring-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        transform-origin: center center;
+      }
+
+      .ring {
+        position: relative;
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        user-select: none;
+        z-index: 1;
+      }
+
+      .number {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-weight: bold;
+        user-select: none;
+        transform-origin: center center;
+        white-space: nowrap;
+        color: rgb(85, 85, 85);
+      }
+
+      .number.highlight {
+        color: white;
+        font-weight: bold;
+        /* box-shadow: 0 0 2px white; */
+        background: transparent;
+        padding: 2px 5px;
+        border-radius: 6px;
+      }
+
+      .tick {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: center bottom;
+        z-index: 2;
+      }
+
+      .large-tick {
+        width: 4px;
+        height: 15px;
+        background-color: rgb(85, 85, 85) !important;
+      }
+
+      .small-tick {
+        width: 2px;
+        height: 10px;
+        background-color: rgb(85, 85, 85);
+      }
+
+      .gradient-text {
+        font-size: 50px;
+        font-weight: bold;
+        background: linear-gradient(
+          to top,
+          #000000,
+          #1e0e0f,
+          #321613,
+          #451e11,
+          #532b08
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-top: 30%;
+      }
+
+      .name-gradient {
+  font-size: 50px;
+        font-weight: bold;
+        background: linear-gradient(
+          to top,
+          #191818,
+          #321719,
+          #4a1d18,
+          #5b2514,
+          #6a3608
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-top: 30%;
+}
+
+      .right-side {
+        width: calc(100% - 40vw);
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* 📱 Mobile view adjustments */
+      @media (max-width: 768px) {
+        .left-overlay,
+        .vertical-line {
+          display: none;
+        }
+
+        .right-side {
+          width: 100%;
+        }
+
+        #clock-container {
+          width: 100vw;
+          height: 100vw;
+          clip-path: inset(0 50% 0 0); /* show only right half circle */
+        }
+       
+      }
+
+       
+      /* Default desktop view */
+/* Base layout: two circles side by side */
+.wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-circle {
+  background: lightblue;
+}
+
+.right-circle {
+  background: lightgreen;
+}
+
+.close-btn {
+  font-size: 24px; /* normal size */
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .left-circle {
+    display: none; /* completely hide left circle */
+  }
+
+  .right-circle {
+    margin: 0 auto; /* center right circle */
+  }
+
+  .close-btn {
+    font-size: 16px; /* smaller close button */
+  }
+}
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .left-overlay,
+  .vertical-line {
+    display: none !important;
+  }
+
+  .right-side {
+    width: 99% !important;
+  }
+
+  #clock-container {
+    width: 140vw;
+    height: 140vw;
+    /* Show only the right half */
+    clip-path: inset(0 0 0 50%);
+    /* Shift so the right half starts at the left border */
+    transform: translateX(-50%);
+    /* Ensure the outer ring is not cropped vertically */
+    overflow: visible;
+  }
+
+  /* Make sure each ring wrapper is centered correctly */
+  .ring-wrapper {
+    transform: translate(-50%, -50%);
+  }
+
+  .close-btn {
+    font-size: 16px !important;
+  }
+}
+
+
+
+.day-date {
+    font-size: 24px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background-color: #000;
+    color: rgb(218, 218, 218) !important;
+    line-height: 1.2; 
+}
+
+#clock-container {
+  overflow: hidden; /* prevent scrollbars */
+}
+body {
+  overflow-x: hidden; /* extra safety */
+}
+
+/* Hide by default (desktop/laptop) */
+#mobile-name {
+  display: none;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  #mobile-name {
+    display: block;
+    position: fixed;
+    bottom: 30px;          /* distance from top */
+    right: 10px;        /* distance from right edge */
+    text-align: right;  /* align text to right */
+    font-size: 28px;    /* smaller font size */
+    line-height: 1.2;
+    z-index: 9999;      /* keep above other elements */
+  }
+
+  #mobile-name h1 {
+    margin: 0;
+    font-size: 24px;    /* smaller "Designed by" */
+    font-weight: bold;
+    background: linear-gradient(
+          to top,
+          #191818,
+          #321719,
+          #4a1d18,
+          #5b2514,
+          #6a3608
+        );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;        /* subtle gray */
+  }
+
+  #mobile-name span {
+    margin: 0;
+    font-size: 28px;    /* slightly larger name */
+    font-weight: bold;
+    background: linear-gradient(
+          to top,
+          #191818,
+          #321719,
+          #4a1d18,
+          #5b2514,
+          #6a3608
+        );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
