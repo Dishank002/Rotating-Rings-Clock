@@ -275,8 +275,8 @@ body {
   }
 
   #clock-container {
-    width: 140vw;
-    height: 140vw;
+    width: 180vw;
+    height: 180vw;
     /* Show only the right half */
     clip-path: inset(0 0 0 50%);
     /* Shift so the right half starts at the left border */

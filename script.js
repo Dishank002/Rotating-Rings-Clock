@@ -146,7 +146,7 @@ function highlightCurrent(ringWrapper, currentValue, totalValues, rotation) {
                 num.style.fontSize = "25px";
                 num.style.padding = "4px 6px";
             } else {
-                num.style.fontSize = "30px";
+                num.style.fontSize = "40px";
                 num.style.padding = "6px 10px";
             }
         } else {
@@ -176,7 +176,7 @@ function highlightCurrent(ringWrapper, currentValue, totalValues, rotation) {
             numDiv.style.fontSize = "25px";
             numDiv.style.padding = "4px 6px";
         } else {
-            numDiv.style.fontSize = "30px";
+            numDiv.style.fontSize = "40px";
             numDiv.style.padding = "6px 10px";
         }
 
